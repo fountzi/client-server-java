@@ -1,3 +1,4 @@
+
 public class Client_interface extends JFrame
 {
     private JMenu serverMenu;
@@ -23,7 +24,7 @@ public class Client_interface extends JFrame
         JMenuBar menuBar= new JMenuBar();
         menuBar.add(serverMenu);
         Icon connectIcon= new ImageIcon(getClass().getResource("images/Connect.gif"));
-        connectButton = new JButton('Connect',connectIcon);
+        connectButton = new JButton("Connect",connectIcon);
         connectMenuItem = new JMenuItem("Connect",connectIcon);
         connectMenuItem.setMnemonic('C');
         ActionListener connectListener = new connectListener();
