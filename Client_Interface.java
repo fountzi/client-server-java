@@ -1,3 +1,10 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.border.BevelBorder;
 
 public class Client_interface extends JFrame
 {
@@ -62,7 +69,7 @@ public class Client_interface extends JFrame
         sendButton.setEnabled(false);
         
         sendButton.addActionListener(new ActionListener(){
-            public void actionPerformed(Action Event event)
+            public void actionPerformed(ActionEvent event)
             {
                 messageManager.sendMessage(userName,inputArea.getText());
                 inputArea.setText("");
@@ -80,7 +87,7 @@ public class Client_interface extends JFrame
         add(buttonPanel, BorderLayout.NORTH);
         add(messagePanel,BorderLayout.SOUTH);
         addWindowListener(new WindowAdapter(){
-            public void windowClosing( Window Event event)
+            public void windowClosing( WindowEvent event)
             {
                 messageManager.disconnect(messageListener);
                 System.exit(0);
@@ -93,7 +100,7 @@ public class Client_interface extends JFrame
     {
         public void actionPerfomed(ActionEvent event)
         {
-            messsage Manager.connect(messageListener);
+            messsageManager.connect(messageListener);
             userName=JOptionPane.showInputDialog( client_interface.this, "Enter user name");
             messageArea.setText("");
             connectButton.setEnabled(false);
