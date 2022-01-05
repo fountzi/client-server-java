@@ -1,3 +1,5 @@
+package client_server;
+
 public class MyClientMessenger
 {
     public static void main(String args[])

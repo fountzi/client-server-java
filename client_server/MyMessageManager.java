@@ -1,3 +1,5 @@
+package client_server;
+
 public interface MyMessageManager
 {
     public void connect(MyMessageListener listener);

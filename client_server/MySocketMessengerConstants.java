@@ -1,3 +1,4 @@
+package client_server;
 public interface MySocketMessengerConstants
 {
     public static final String MULTICAST_ADDRESS="239.0.0.1";
