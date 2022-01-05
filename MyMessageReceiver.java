@@ -1,10 +1,10 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.*;
+import java.net.Socket;
+import java.net.SocketTimeoutException;
 import java.util.StringTokenizer;
 
-public class MyMessageReceiver Implements Runnable, MySocketMessengerConstants
+public class MyMessageReceiver implements Runnable, MySocketMessengerConstants
 {
     private BufferedReader input;
     private MyMessageListener messageListener;
@@ -40,7 +40,7 @@ public class MyMessageReceiver Implements Runnable, MySocketMessengerConstants
                 break;
             }
 
-            if(message(!=null))
+            if(message!=null)
             {
                 StringTokenizer tokenizer = new StringTokenizer(message,MESSAGE_SEPARATOR);
                 if(tokenizer.countTokens()==2)

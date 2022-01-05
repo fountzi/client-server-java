@@ -12,7 +12,7 @@ public class Client_interface extends JFrame
     private JTextArea messageArea;
     private JTextArea inputArea;
     private JButton connectButton;
-    private JMenuIteam connectMenuItem;
+    private JMenuItem connectMenuItem;
     private JButton disconnectButton;
     private JMenuItem disconnectMenuItem;
     private JButton sendButton;
