@@ -1,6 +1,7 @@
 package client_server;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.Socket;
 import java.net.SocketTimeoutException;
 import java.util.StringTokenizer;
@@ -10,13 +11,13 @@ public class MyMessageReceiver implements Runnable, MySocketMessengerConstants
     private BufferedReader input;
     private MyMessageListener messageListener;
     private boolean keepListening= true;
-    public MyMessageReceiver(MyMessageListener listener,Socket clientSoket)
+    public MyMessageReceiver(MyMessageListener listener,Socket clientSocket)
     {
         messageListener=listener;
         try
         {
-            clientSoket.setSoTimeout(5000);
-            input = new BuffereReader(new InputStreamRader(getInputStream()));
+            clientSocket.setSoTimeout(5000);
+            input = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         }
         catch (IOException ioException) 
         {

@@ -4,8 +4,8 @@ public class MyClientMessenger
 {
     public static void main(String args[])
     {
-        MyMessageManger messageManager;
-        if(args.lenght==0) messageManager= new MySocketMessageManger("localhost");
+        MyMessageManager messageManager;
+        if(args.length==0) messageManager= new MySocketMessageManager("localhost");
         else messageManager = new MySocketMessageManager(args[0]);
 
         Client_interface clientGUI= new Client_interface(messageManager);
